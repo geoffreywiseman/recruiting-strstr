@@ -12,7 +12,7 @@ public class Two extends StrStrTest {
 		int i, j;
 		if( patternlength > strlength )
 			return -1;
-		for( int i = 0; i<string.length; i++ ) {
+		for( i = 0; i<string.length; i++ ) {
 			for( j = 0; j<pattern.length; j++ ) {
 				if( i+j >= string.length || string[i+j] != pattern[j] ) {
 					break;
