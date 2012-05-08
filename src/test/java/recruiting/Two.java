@@ -7,10 +7,12 @@ public class Two extends StrStrTest {
 
 	@Override
 	public int strstr(char[] pattern, char[] string) {
-		if( pattern.length > string.length )
+		int strlength = string.length;
+		int patternlength = pattern.length;
+		int i, j;
+		if( patternlength > strlength )
 			return -1;
 		for( int i = 0; i<string.length; i++ ) {
-			int j;
 			for( j = 0; j<pattern.length; j++ ) {
 				if( i+j >= string.length || string[i+j] != pattern[j] ) {
 					break;
