@@ -40,5 +40,10 @@ public abstract class StrStrTest {
 	public void testMultipleMatches() {
 		Assert.assertEquals( 4, strstr( "pat", "papapatpat" ) );
 	}
+
+        @Test
+	public void testDontSkipOverMismatchedPattern() {
+                Assert.assertEquals( 2, strstr( "lola", "lololala" ) );
+        }
 	
 }
