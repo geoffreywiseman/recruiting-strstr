@@ -45,5 +45,21 @@ public abstract class StrStrTest {
 	public void testDontSkipOverMismatchedPattern() {
                 Assert.assertEquals( 2, strstr( "lola", "lololala" ) );
         }
+
+        @Test
+        public void testFindExact() {
+		Assert.assertEquals( 0, strstr( "bird", "bird" ) );
+	}
+
+	@Test
+	public void testFindAtEnd() {
+		Assert.assertEquals( 4, strstr( "bird", "bluebird" ) );
+	}
+
+	@Test
+	public void testFindLastCharacterWrong() {
+		Assert.assertEquals( -1, strstr( "mistake", "mistaki" ) );
+	}
+
 	
 }
