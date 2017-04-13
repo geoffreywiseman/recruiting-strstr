@@ -6,7 +6,8 @@ public class Seventeen extends StrStrTest {
 	 * YL; Recursive implementation for fun.
 	 */
 	public int strstr( char[] haystack, char[] needle ) {
-        return strstr( haystack, needle, 0, 0 );
+		// EDITED: Yang's original solution has needle and haystack reversed
+        return strstr( needle, haystack, 0, 0 );
     }
     
     private int strstr( char[] haystack, char[] needle, int h, int n ) {
@@ -20,7 +21,8 @@ public class Seventeen extends StrStrTest {
             if ( haystack[h] == needle[n] ) {
                 return strstr( haystack, needle, h + 1, n + 1 );
             } else {
-                return strstr( haystack, needle, h + 1, 0 );
+            	// EDITED: Yang originally had h+1 instead of h-n+1
+                return strstr( haystack, needle, h - n + 1, 0 );
             }
         }
     }
