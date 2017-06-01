@@ -57,6 +57,11 @@ public abstract class StrStrTest {
 	}
 
 	@Test
+	public void testBacktrackShouldntSkipOverMismatchedCharacter() {
+		Assert.assertEquals( 5, strstr( "abcabd", "abcababcabd" ) );
+	}
+
+	@Test
 	public void testFindLastCharacterWrong() {
 		Assert.assertEquals( -1, strstr( "mistake", "mistaki" ) );
 	}
